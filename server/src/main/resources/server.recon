@@ -25,7 +25,7 @@ transit: @fabric {
   }
 }
 
-@web(port: 9002) {
+@web(port: 9001) {
   space: "transit"
   documentRoot: "../ui/"
   @websocket {
