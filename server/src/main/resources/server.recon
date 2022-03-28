@@ -1,5 +1,6 @@
 @kernel(class: 'swim.store.db.DbStoreKernel', optional: true)
 @kernel(class: 'swim.reflect.ReflectKernel', optional: true)
+@kernel(class: 'swim.meta.MetaKernel')
 
 transit: @fabric {
   @plane(class: "swim.transit.TransitPlane")

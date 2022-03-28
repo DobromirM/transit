@@ -1,17 +1,18 @@
 rm -rf dist/
 mkdir -p dist/
 
-cd ui
-npm install
-npm run compile && npm run bundle
-mkdir -p ../dist/ui
-cp -rf index.html dist ../dist/ui/
-
-cd ../server
+cd server
 ./gradlew build
 
 cd ../
-tar -xf server/build/distributions/swim-transit-3.10.2.tar -C dist/
+tar -xf server/build/distributions/swim-transit-3.11.0.tar -C dist/
 
+cd ui
+npm install
+npm run compile && npm run bundle
+mkdir -p ../dist/swim-transit-3.11.0/ui
+cp -rf index.html dist ../dist/swim-transit-3.11.0/ui
 
-# sudo docker build ./ -f ./java.Dockerfile -t swimdatafabric/transit:1.0
+cd ../
+
+docker build ./ -f ./java.Dockerfile -t swimdatafabric/transit:1.0
